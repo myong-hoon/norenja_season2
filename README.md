@@ -27,4 +27,4 @@ https://github.com/Gamdongran/norenja-info
   - 테스트 파일 만들어 추후에 동일한 기능을 사용할때 다시 사용할수 있도록 제작
   
 2021.12.15 03:44
-* login01&login02 html&css 
+* login01&login02 html&css 정리완료.
