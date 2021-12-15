@@ -31,3 +31,13 @@ https://github.com/Gamdongran/norenja-info
 
 2021.12.15 10:00
 * gitignore 추가 적용
+
+2021.12.15 23:55
+* header.html -> 상단메뉴/사이드바/홈&사이드바 플로팅버튼 만 따로 빼서 구현) -> 사이드바 나오면 검색창이 안가려지는 문제 해결 못함.
+* main01.html 에 header.html 불러오도록 함 -> css 및 js 정리필요
+
+2021.12.16 02:20
+* mainbar 검색창 수정
+
+2021.12.16 02:28
+* sidebar위로 검색창 메뉴 등이 나타나는것 수정
