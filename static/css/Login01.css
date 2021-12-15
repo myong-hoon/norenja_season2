@@ -13,11 +13,11 @@
   font-family: 'Noto Sans KR', sans-serif;
 
 }
-.wrapper{
+.login01_wrapper{
   background-color: #00000000
 }
 
-.wrapper .main{
+.login01_wrapper .main{
   width: 50%;
   margin:30px auto;
   padding: 10px;
@@ -28,19 +28,19 @@
   background-color: #fbf8ef;
 }
 
-.wrapper .main .input_fields{
+.login01_wrapper .main .input_fields{
   display: inline-block;
   width: 100%;
   height: 30%;
 
 }
-.wrapper .main .input_fields label{
+.login01_wrapper .main .input_fields label{
   font-size: 3vw;
   margin: 4% auto 4%;
   display: inline-block;
   width: 50%;
 }
-.wrapper .main .input_fields .input_field{
+.login01_wrapper .main .input_fields .input_field{
   margin: auto;
   width: 50%;
   outline: none;
@@ -51,15 +51,15 @@
   margin-bottom: 2%;
   cursor: pointer;
 }
-.wrapper .main .input_fields .id_pw {
+.login01_wrapper .main .input_fields .id_pw {
   background-color: #faf2d9;
 
 }
-.wrapper .main .input_fields .kakao {
-  background-color: yellow;
+.login01_wrapper .main .input_fields .kakao {
+  background: linear-gradient(-135deg,#dfdb15, #eecb6c);
 
 }
-.wrapper .main .input_fields .signup-link{
+.login01_wrapper .main .input_fields .signup-link{
   margin: auto;
   
   width: 50%;

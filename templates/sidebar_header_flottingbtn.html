@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="ko" dir="ltr">
+
+<head>
+    <!-- kakao -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jquery cookie  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </link>
+    <!-- 홈버튼  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="../static/css/sidebar_header_flottingbtn.css">
+    </link>
+    <script src="../static/js/sidebar_header_flottingbtn.js"></script>
+</head>
+
+<script>
+    function load_contents(address) {
+
+        $("#contents").load(address)
+    }
+</script>
+
+<body>
+
+    <!-- 숨겨진 div -->
+    <div class="hidden">
+        <!-- 사이드바버튼 체크박스 & 아이콘 연결해놓음 -->
+        <input type="checkbox" id="nav_btn" hidden>
+        <label for="nav_btn" class="menu-btn" id="OpenBtn" style="background-color: rgb(0, 0, 0, 0);">
+            <i class="fas fa-user" style="background-color: rgb(0, 0, 0, 0);"></i>
+        </label>
+
+        <!-- 사이드바 -->
+        <nav id="sidebar">
+            <img src="../static/img/side_img.png">
+            <div id="sidebar_no_login">
+                <ul class="list-items" id="list-items">
+                    <li>
+                        로그인이 필요한
+                        <br>
+                        페이지 입니다.
+                    </li>
+                    <li>
+                        <button onclick="alert('로그인페이지이동')">로그인 하러 가기</button>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="sidebar_login" class="sidebar_login">
+                <div id="sidebar_login_profile">
+                    <ol> 아이디 : </ol>
+                    <ol> 이름 : </ol>
+                    <ol> 성별 : </ol>
+                    <ol> 생년월일 : </ol>
+                    <button onclick="alert('로그아웃')">로그아웃</button>
+                </div>
+
+            </div>
+            <div id="nav-mainbtn" style="display: none;">
+                <button onClick="fnMove('1')" class="btn btn-outline-light">생활복지</button>
+                <button onClick="fnMove('3')" class="btn btn-outline-light">의료복지</button>
+                <button onClick="fnMove('2')" class="btn btn-outline-light">문화/여가</button>
+                <button class="btn btn-outline-light">복지지도<a class="fas fa-map-marker-alt"></a></button>
+            </div>
+        </nav>
+
+        <!-- 홈 플로팅 버튼 -->
+        <div onclick="fnMove('4')" class="home_btn">
+            <i class="fas fa-home" style="background-color: rgb(0, 0, 0, 0);"></i>
+
+
+        </div>
+
+        <!-- 메인 -->
+        <div id="header">
+            <div class="header_box">
+                <img src="../static/img/logo.gif">
+                <div class="sidebar_btn_group">
+                    <button type="button" onclick="load_contents('login')">생활 복지</button>
+                    <button type="button" onclick="load_contents('login2')">의료 복지</button>
+                    <button type="button" onclick="alert('문화여가')">문화/여가</button>
+                    <button type="button" onclick="alert('생활복지')">복지 지도</button>
+                    <button type="button" onclick="alert('about')">about</button>
+                </div>
+                <!-- <lu>
+                <li><a onClick="fnMove('1')">생활 복지</a></li>
+                <li><a onClick="fnMove('3')">의료 복지</a></li>
+                <li><a onClick="fnMove('2')">문화/여기</a></li>
+                <li><a herf="#">복지 지도</a></li>
+                <li><a herf="#">About</a></li>
+            </lu> -->
+            </div>
+        </div>
+        <div id="main">
+            <!--검색창부터 카드까지 영역--->
+            <div id="cases">
+                <div id="search-box">
+                    <div class="input-group">
+                        <input type="text" class="form-control search_input" placeholder="검색어를 입력하세요!">
+                        <i class="fas fa-search" type="button" onclick="alert('검색')"></i>
+                      </div>
+                      
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div id="contents">
+
+        </div>
+
+</body>
+
+</html>
