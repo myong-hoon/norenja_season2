@@ -20,26 +20,6 @@
     </link>
     <script src="../static/js/main01.js"></script>
 </head>
-<script>
-
-
-    function go_map() {
-        window.location.href = '/location'
-    }
-    function sign_out() {
-        $.removeCookie('mytoken', { path: '/' });
-        alert('로그아웃!');
-        window.location.href = "/";
-    };
-
-    function fnMove(seq) {
-        var offset = $("#div" + seq).offset();
-        $('html, body').animate({
-            scrollTop: offset.top - 60 /*스크롤된 위치에서 상단네비 길이만큼 -60*/
-        }, 400 /*스크롤시간*/);
-    }
-
-</script>
 
 <body>
 
@@ -254,7 +234,7 @@
 
         <!---생활복지 -->
 
-        <section id="div1" class="row">
+        <section id="div2" class="row">
 
             <div id="B_title">
                 <h2>생활복지</h2>
@@ -472,7 +452,7 @@
 
 
         <!---여가/문화복지 헤더-->
-        <section id="div2" class="row">
+        <section id="div4" class="row">
             <div id="B_title">
                 <h2>문화/여가</h2>
 

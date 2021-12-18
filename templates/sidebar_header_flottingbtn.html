@@ -65,15 +65,15 @@
 
             </div>
             <div id="nav-mainbtn" style="display: none;">
-                <button onClick="fnMove('1')" class="btn btn-outline-light">생활복지</button>
+                <button onClick="fnMove('2')" class="btn btn-outline-light">생활복지</button>
                 <button onClick="fnMove('3')" class="btn btn-outline-light">의료복지</button>
-                <button onClick="fnMove('2')" class="btn btn-outline-light">문화/여가</button>
+                <button onClick="fnMove('4')" class="btn btn-outline-light">문화/여가</button>
                 <button class="btn btn-outline-light">복지지도<a class="fas fa-map-marker-alt"></a></button>
             </div>
         </nav>
 
         <!-- 홈 플로팅 버튼 -->
-        <div onclick="fnMove('4')" class="home_btn">
+        <div onclick="fnMove('1')" class="home_btn">
             <i class="fas fa-home" style="background-color: rgb(0, 0, 0, 0);"></i>
 
 
@@ -81,13 +81,15 @@
 
         <!-- 메인 -->
         <div id="header">
+            <!-- fnmove 동적을 위해 디브 추가 -->
+            <div id="div1" style="display: none;"></div>
             <div class="header_box">
                 <img src="../static/img/logo.gif">
                 <div class="mainbar_btn_group">
-                    <button type="button" onclick="load_contents('login')">생활 복지</button>
-                    <button type="button" onclick="load_contents('login2')">의료 복지</button>
-                    <button type="button" onclick="alert('문화여가')">문화/여가</button>
-                    <button type="button" onclick="alert('생활복지')">복지 지도</button>
+                    <button type="button" onclick="fnMove('2')">생활 복지</button>
+                    <button type="button" onclick="fnMove('3')">의료 복지</button>
+                    <button type="button" onclick="fnMove('4')">문화/여가</button>
+                    <button type="button" onclick="alert('복지지도')">복지 지도</button>
                     <button type="button" onclick="alert('about')">about</button>
                 </div>
                 <!-- <lu>

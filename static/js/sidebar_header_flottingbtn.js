@@ -19,3 +19,10 @@ $(document).ready(function (){
         $('#sidebar_login').css('display','block')
     }
 });
+
+function fnMove(seq) {
+    var offset = $("#div" + seq).offset();
+    $('html, body').animate({
+        scrollTop: offset.top - 60 /*스크롤된 위치에서 상단네비 길이만큼 -60*/
+    }, 500 /*스크롤시간*/ );
+}

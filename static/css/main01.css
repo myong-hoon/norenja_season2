@@ -341,6 +341,7 @@
   color: #5a4001;
   outline: none;
 }
+       
 
 #ad_wrap {
   position:relative;
@@ -401,6 +402,10 @@
   padding: 50px 100px;
 }
 #div3{
+    background-color:rgba(245, 220, 174, 0.2);
+  padding: 50px 100px;
+}
+#div4{
     background-color:rgba(245, 220, 174, 0.2);
   padding: 50px 100px;
 }

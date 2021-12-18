@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="ko" dir="ltr">
+
+<head>
+  <!-- kakao -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <!-- jquery  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jquery cookie  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </link>
+  <link rel="stylesheet" href="../static/css/join.css">
+  </link>
+  <script src="../static/css/join.js"></script>
+  <script src="../static/js/join_addressAPI.js"></script>
+  <!-- 다음지도api -->
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="title">회원가입</div>
+    <div action="#" class='join_input'>
+
+      <div class="input-group join_input">
+        <input type="text" class="form-control" placeholder="아이디">
+        <span class="input-group-btn" style="width: 1%;"></span>
+        <span class="input-group-btn" style="width: 30%;">
+          <button class="btn btn-default join_btn" type="button" style="width: 100%;">중복확인</button>
+        </span>
+      </div>
+      <div class="join_input">
+        <input type="password" class="form-control" placeholder="비밀번호">
+      </div>
+      <div class="join_input">
+        <input type="password" class="form-control" placeholder="비밀번호 확인">
+      </div>
+      <div class="join_input">
+        <input type="text" class="form-control" placeholder="이름">
+      </div>
+      <div class="input-group join_input">
+        <input type="text" class="form-control" placeholder="주민번호" style="width: 40%;">
+        <span class="input-group-btn" style="transform:translate(0,5px); text-align: center; width:4%;">
+          -
+        </span>
+        <input type="text" class="form-control" placeholder="" style="width: 7%; padding: 0; text-align: center;">
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+        <span style="width: 0.5%;"></span>
+        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
+          readonly>
+      </div>
+
+      <div class="input-group join_input">
+        <input type="text" class="form-control nn" placeholder="우편번호" style="width: 25%; padding: 0; text-align: center;"
+        readonly>
+      <span class="input-group-btn" style="width: 1%;"></span>
+      <input type="text" id="postcode" class="form-control" style="width: 43%;" placeholder="" readonly>
+      <span class="input-group-btn" style="width: 1%;"></span>
+        <span class="input-group-btn" style="width: 30%;">
+          <button class="btn btn-default join_btn" type="button" style="width: 100%;" onclick="execDaumPostcode()">주소검색</button>
+        </span>
+      </div>
+
+      <div class="input-group join_input">
+        <input type="text" class="form-control nn" placeholder="도로명" style="width: 25%; padding: 0; text-align: center;"
+          readonly>
+        <span class="input-group-btn" style="width: 1%;"></span>
+        <input type="text" id="roadAddress" class="form-control" style="width: 74%;" placeholder="" readonly>
+      </div>
+
+      <div class="input-group join_input">
+        <input type="text" class="form-control nn" placeholder="지번" style="width: 25%; padding: 0; text-align: center;"
+          readonly>
+        <span class="input-group-btn" style="width: 1%;"></span>
+        <input type="text" id="jibunAddress" class="form-control" style="width: 74%;" placeholder="" readonly>
+      </div>
+
+      <div class="input-group join_input">
+        <input type="text" class="form-control nn" placeholder="상세주소" style="width: 25%; padding: 0; text-align: center;"
+          readonly>
+        <span class="input-group-btn" style="width: 1%;"></span>
+        <input type="text" class="form-control" style="width: 74%;" placeholder="">
+      </div>
+
+      <button class="input-group submit_btn" >가입하기</button>
+    </div>
+  </div>
+
+  <div id="footer">
+    <img src="../static/img/footer_egg2.png">
+  </div>
+</body>
+
+</html>
