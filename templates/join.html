@@ -22,7 +22,10 @@
 </head>
 
 <body>
+  <div id="cont">
 
+  </div>
+  
   <div class="wrapper">
     <div class="title">회원가입</div>
     <div action="#" class='join_input'>
@@ -50,59 +53,53 @@
         </span>
         <input type="text" class="form-control" placeholder="" style="width: 7%; padding: 0; text-align: center;">
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label> 
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label> 
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label> 
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label> 
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label> 
         <span style="width: 0.5%;"></span>
-        <input type="text" class="form-control nn" placeholder="x" style="width: 7%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="width: 7%;">x</label>
       </div>
 
       <div class="input-group join_input">
-        <input type="text" class="form-control nn" placeholder="우편번호" style="width: 25%; padding: 0; text-align: center;"
-        readonly>
-      <span class="input-group-btn" style="width: 1%;"></span>
-      <input type="text" id="postcode" class="form-control" style="width: 43%;" placeholder="" readonly>
-      <span class="input-group-btn" style="width: 1%;"></span>
+        <label class="form-control gray_label">우편번호</label>
+        <span class="input-group-btn" style="width: 1%;"></span>
+        <label class="form-control gray_label" id="postcode" style="width: 43%;"></label>
+        <span class="input-group-btn" style="width: 1%;"></span>
         <span class="input-group-btn" style="width: 30%;">
-          <button class="btn btn-default join_btn" type="button" style="width: 100%;" onclick="execDaumPostcode()">주소검색</button>
+          <button class="btn btn-default join_btn" type="button"
+            onclick="execDaumPostcode()">주소검색</button>
         </span>
       </div>
 
       <div class="input-group join_input">
-        <input type="text" class="form-control nn" placeholder="도로명" style="width: 25%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label">도로명</label>
         <span class="input-group-btn" style="width: 1%;"></span>
-        <input type="text" id="roadAddress" class="form-control" style="width: 74%;" placeholder="" readonly>
+        <label class="form-control gray_label" id="roadAddress" style="width: 74%;"></label>
       </div>
 
       <div class="input-group join_input">
-        <input type="text" class="form-control nn" placeholder="지번" style="width: 25%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label">지 번</label>
         <span class="input-group-btn" style="width: 1%;"></span>
-        <input type="text" id="jibunAddress" class="form-control" style="width: 74%;" placeholder="" readonly>
+        <label class="form-control gray_label" id="jibunAddress" style="width: 74%;"></label>
       </div>
 
       <div class="input-group join_input">
-        <input type="text" class="form-control nn" placeholder="상세주소" style="width: 25%; padding: 0; text-align: center;"
-          readonly>
+        <label class="form-control gray_label" style="background-color: white;">상세주소</label>
         <span class="input-group-btn" style="width: 1%;"></span>
         <input type="text" class="form-control" style="width: 74%;" placeholder="">
       </div>
 
-      <button class="input-group submit_btn" >가입하기</button>
+      <button class="input-group submit_btn">가입하기</button>
     </div>
+
+    <input type="text" id="sigungu" readonly style="display: none;">
+
   </div>
 
   <div id="footer">

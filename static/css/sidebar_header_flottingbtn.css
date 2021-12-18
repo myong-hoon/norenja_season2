@@ -99,29 +99,25 @@
 }
 
 #header .header_box img{
-  position: flex;
+  
   margin-left: 1vw;
-  width: 14vw;
-  float: left;
+  width: 13vw;
+  
 }
-#header .header_box .mainbar_btn_group {
+.mainbar_btn_group {
   width: 100%;
+  text-align: center;
 
 }
-#header .header_box .mainbar_btn_group button{
-  
-  transform: translate(50%,10%);
-  
-  width: 11vw;
+.mainbar_btn_group button{
   outline: none;
   background: #ffffff00;
   border: #ffffff00;
-  font-size: 1.5vw;
+  font-size: 2.2vw;
   font-weight: bold;
   color: #5a4001;
-  
 }
-#header .header_box .mainbar_btn_group button:hover{
+.mainbar_btn_group button:hover{
   
   color: black;
   
@@ -130,12 +126,11 @@
   background-color: #fbf8ef;
 }
 #cases {
-  padding-top: 1vw;
+  transform: translate(0,-110%);
   width: 60%;
   height: 5.5vw;
   background-color: #fbf8ef;
-  margin: auto;
-
+  margin: 0 auto
 }
 
 
@@ -147,8 +142,7 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, .25);
   border-radius: 45px;
   background-color:#ffffff;
-  height: 3vw;
-  padding-left: 2%;
+  height: 4vw;
 }
 
 #search-box input::placeholder {

@@ -32,6 +32,9 @@
 .join_btn{
   background: #ecd599;
   text-align: center;
+  width: 100%;
+  height: 100%; 
+  padding: 0;
 }
 
 .submit_btn{
@@ -46,4 +49,10 @@
   cursor: pointer;
 
   background: linear-gradient(-135deg,#dfdb15, #eecb6c);
+}
+.gray_label{
+  width: 25%;
+  padding: 7px 2px 0px 2px ;
+  text-align: center;
+  background-color: #ccc;
 }
