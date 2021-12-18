@@ -44,3 +44,6 @@ https://github.com/Gamdongran/norenja-info
 
 2021.12.18 20:54
 * 다음 주소 검색 api 연동하여 회원가입시 주소를 검색하여 입력하도록 설정
+
+2021.12.19 02:21
+* join/main/login/header 사소한 오류 및 css 수정
