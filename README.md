@@ -47,3 +47,4 @@ https://github.com/Gamdongran/norenja-info
 
 2021.12.19 02:21
 * join/main/login/header 사소한 오류 및 css 수정
+* main/login01/login02에 header load()이용하여 붙임
