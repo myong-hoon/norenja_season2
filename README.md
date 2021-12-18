@@ -41,3 +41,6 @@ https://github.com/Gamdongran/norenja-info
 
 2021.12.16 02:28
 * sidebar위로 검색창 메뉴 등이 나타나는것 수정
+
+2021.12.18 20:54
+* 다음 주소 검색 api 연동하여 회원가입시 주소를 검색하여 입력하도록 설정
