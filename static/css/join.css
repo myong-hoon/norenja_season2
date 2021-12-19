@@ -9,7 +9,7 @@
     
   }
   
-.wrapper{
+.join_wrapper{
   padding: 10px;
   width: 60%;
   height: 70%;
@@ -24,7 +24,7 @@
   text-align: center;
 
 }
-.wrapper .join_input{
+.join_wrapper .join_input{
   padding: 10px;
 
 }

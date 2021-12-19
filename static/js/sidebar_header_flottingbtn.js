@@ -24,7 +24,7 @@ $(document).ready(function () {
         }
     });
 
-    //사이드바 로그아웃 버튼 누르면 동작
+    // 사이드바 로그아웃 버튼 누르면 동작
     $('#login').click(function () {
 
         if (document.getElementById("login").innerText == '로그인') {
@@ -41,7 +41,7 @@ $(document).ready(function () {
 function fnMove(seq) {
     var offset = $("#div" + seq).offset();
     $('html, body').animate({
-        scrollTop: offset.top - 60 /*스크롤된 위치에서 상단네비 길이만큼 -60*/
+        scrollTop: offset.top /*스크롤된 위치에서 상단네비 길이만큼 -60*/
     }, 500 /*스크롤시간*/);
 }
 

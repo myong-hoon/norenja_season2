@@ -10,7 +10,7 @@
 .home_btn {
   float: right;
   right: 5%;
-  bottom: 1%;
+  bottom: 5%;
   position: fixed;
   font-size: 4vw;
 }
@@ -95,19 +95,16 @@
 
 #header .header_box {
   width: 100%;
-  
+
 }
 
 #header .header_box img{
-  
   margin-left: 1vw;
   width: 13vw;
-  
 }
 .mainbar_btn_group {
   width: 100%;
   text-align: center;
-
 }
 .mainbar_btn_group button{
   outline: none;
@@ -116,6 +113,7 @@
   font-size: 2.2vw;
   font-weight: bold;
   color: #5a4001;
+  margin-bottom: 1vw;
 }
 .mainbar_btn_group button:hover{
   
@@ -126,7 +124,7 @@
   background-color: #fbf8ef;
 }
 #cases {
-  transform: translate(0,-110%);
+  transform: translate(0,-120%);
   width: 60%;
   height: 5.5vw;
   background-color: #fbf8ef;

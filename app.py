@@ -28,5 +28,9 @@ def login2():
 def join():
     return render_template("join.html")
 
+@app.route("/location")
+def location():
+    return render_template("location.html")
+
 if __name__ == "__main__":
     app.run("0.0.0.0", port=5000, debug=True)
