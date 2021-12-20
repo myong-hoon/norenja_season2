@@ -6,13 +6,14 @@ https://github.com/Gamdongran/norenja-info
 
 사용언어 : python 
 
-  사용 라이브러리
-    1.flask   
-      -> 사용이유 : 장고 / fastAPI 및 기타 언어는 아직 사용해보지 않아 사용
-    2.jwt.    
-      -> 사용이유 : 세션/쿠키 방식보다 안전하다 (참고 : https://tansfil.tistory.com/58)
-    3.pymsql  
-      -> 사용이유 : sql서버를 이용하기 위해 사용
+사용 라이브러리
+  1.flask
+  *사용이유 : 장고 / fastAPI 및 기타 언어는 아직 사용해보지 않아 사용
+  2.jwt
+  *사용이유 : 세션/쿠키 방식보다 안전하다 (참고 : https://tansfil.tistory.com/58)
+  3.pymsql
+  *사용이유 : sql서버를 이용하기 위해 사용
+   
   
 사용한 DB : MYSQL -> 첫 toy project 에서는 mongoDB를 사용하였는데 sql을 사용하고 싶어 채택했다.
 
