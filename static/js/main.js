@@ -1,5 +1,5 @@
-$(document).ready(function (){
+$(document).ready(function () {
     $("#cont").load('header')
-    $("#location").load('location')
+    $("#location").load('location')    
 });
 

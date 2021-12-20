@@ -1,3 +1,4 @@
+let login_status
 //사이드바의 left값이 0인지 -값인지 확인후(-값이면 사이드바 hide 0이면 show 상태) 0일때 사이드바 이외의 부분을 클릭하면 sidebar_btn을 누른다.
 $(document).mouseup(function (e) {
     let target = $("#sidebar");
@@ -9,9 +10,15 @@ $(document).mouseup(function (e) {
 });
 //사이드바의 로그인상태이면 계정정보 로그아웃을 표시하고 로그아웃상태이면 로그인 창으로 연결하는 창을 띄움
 $(document).ready(function () {
-
-
-    let login_status = true;
+    let user=$('#user').text();
+    let res = (new Function ('return '+ user))();
+    
+    if(res){
+        login_status = true
+    }
+    else{
+        login_status = false
+    }
     //사이드바 버튼 누르면 동작
     $('#sidebar_btn').click(function () {
         if (login_status == false) {
@@ -24,18 +31,6 @@ $(document).ready(function () {
         }
     });
 
-    // 사이드바 로그아웃 버튼 누르면 동작
-    $('#login').click(function () {
-
-        if (document.getElementById("login").innerText == '로그인') {
-            document.getElementById("login").innerText = '로그아웃'
-            alert('로그인 페이지로 이동합니다.')
-        } else if (document.getElementById("login").innerText == '로그아웃') {
-            alert('로그아웃!')
-            document.getElementById("login").innerText = '로그인'
-        }
-
-    });
 });
 
 function fnMove(seq) {
@@ -45,5 +40,10 @@ function fnMove(seq) {
     }, 500 /*스크롤시간*/);
 }
 
+function sign_out() {
+    $.removeCookie('mytoken', { path: '/' });
+    alert('로그아웃!');
+    window.location.href = "/login";
+}
 
-
+    
