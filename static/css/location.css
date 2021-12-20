@@ -14,10 +14,10 @@
 
   width: 90%;
   margin:30px auto;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border-color: #5a4001;
-  border-radius: 25px;
+  border-radius: 30px;
   box-shadow: 5px 5px 5px 5px rgba(160, 155, 155, 0.459);
   background-color: #fbf8ef;
 
@@ -30,78 +30,60 @@
 
 }
 
-#location_menubar {
-  border-radius: 10px 10px 0px 0px;
-  border-color: #5a4001;
-  border-bottom: 2px,solid,#fbf8ef;
-  box-shadow: 1px 1px 1px 1px rgba(160, 155, 155, 0.459);
-  background-color: #ecd599;
-  margin: auto;
+#mapwrap{
+  position:relative;
+  overflow:hidden;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
-  
-}
-#location_list_title {
-  width: 30%;
-  height: 100%;
-  background-color: white;
-  border-radius: 10px;
-  border-color: #5a4001;
-  box-shadow: 1px 1px 1px 1px rgba(160, 155, 155, 0.459);
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-#location_list_title h4{
-  margin: 0;
-  padding: 0;
-  font-size: 3vw;
-}
-#location_type_btn{
-  
-  float: right;
-  padding: 0px 1px;
-  width: 70%;
-  height: 100%;
-}
-#location_type_btn button{
-  outline: none;
-  vertical-align: middle;
-  height: 60px;
-  width: 12vw;
-  background: none;
-  border: none;
-  font-size: 2vw;
-}
-
-#location_type_btn button:hover{
-  font-size: 2.5vw;
-  font-weight: bold
-}
-
-#location_type_btn input{
-  display: none;
-}
-
-#location_list {
-  border-radius: 0px 0px 10px 10px;
-  border-color: #5a4001;
+  height: 500px;
   background-color: #ecd599;
-  margin: auto;
-  width: 100%;
-  height: 40vw;
-  box-shadow: 1px 1px 1px 1px rgba(160, 155, 155, 0.459);
-}
-#type_views{
-  width: 400px;
-  height: 200px;
-  text-align: end;
-  float: right;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px 5px rgba(160, 155, 155, 0.459);
+}.category, .category *{
+  margin:0;
+  padding:0;
+  color:#000;
+}.category {
+  position:absolute;
+  overflow:hidden;
+  top:10px;
+  left:10px;
+  width:fit-content;
+  height:50px;
+  z-index:10;
+  border:1px solid black;
+  font-family:'Malgun Gothic','맑은 고딕',
+  sans-serif;font-size:12px;
+  text-align:center;
+  background-color:#fff;
+}.category .menu_selected {
+  background:#FF5F4A;
+  color:#fff;
+  border-left:1px solid #915B2F;
+  border-right:1px solid #915B2F;
+  margin:0 -1px;
+}.category li{
+  list-style:none;
+  float:left;
+  width:50px;
+  height:45px;
   padding-top:5px;
+  cursor:pointer;
+}.category .ico_comm {
+  display:block;
+  margin:0 auto 2px;
+  width:22px;
+  height:26px;
+  background:url('../img/map.png') no-repeat;
+}.category .ico_publicInstitution {
+  background-position: 0px 0;
+}.category .ico_hospital {
+  background-position: 0px -28px;
+}.category .ico_drugstore {
+  background-position: 0px -56px;
+}.category .ico_seniorCitizenship {
+  background-position: 0px -84px;
+}.map{
+  border-radius: 30px;
 }
-#type_views span{
-  margin: 0 3px 0 3px;
-}
+</style>
+
