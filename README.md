@@ -72,5 +72,13 @@ https://github.com/Gamdongran/norenja-info
 2021.12.20 19:27
 * 복지지도 구현 완료(sql 미적용) -> 어제 만든 ui 없애고 카카오 맵에서 제공하는 기능으로 추가(마커 구분하기)
 
-
+2021.12.21 02:10
+* 모든 페이지 연결
+* 모든 함수 연결
+* 로그인 여부 확인 
+    ( 로그인 성공했으면 render_template('main.html', user_info=result) 에서 user_info로 html 로 넘겨서 데이터 여부를 확인하여 있으면 로그인상태 없으면 로그아웃 상태로 구분
+      html로 받은 데이터는 ""으로 둘러쌓여 문자열로 들어오기 때문에 eval() 또는 new Function()으로 딕셔너리로 변환해야하지만 eval()보안에 취약하기때문에
+      (new Function ('return '+user_info))(); 을 이용하여 사용한다
+      해당 파일에서는 딕셔너리로 사용이 가능하다!-> 추후 시군구 동 이름 등을 사이드 바에 넣을때 참고하여 넣을예정)
+* sql 연결 (로그인 가능 / 회원가입 불가( sql table 에 name address detailAddress sigungi admin_num gender 추가필요)
 
