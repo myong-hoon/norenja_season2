@@ -15,7 +15,8 @@ https://github.com/Gamdongran/norenja-info
   * 사용이유 : sql서버를 이용하기 위해 사용
    
   
-사용한 DB : MYSQL -> 첫 toy project 에서는 mongoDB를 사용하였는데 sql을 사용하고 싶어 채택했다.
+사용한 DB : MYSQL
+* 채택 이유 :첫 toy project 에서는 mongoDB를 사용하였는데 sql을 사용하고 싶어 채택했다.
 
 
 
