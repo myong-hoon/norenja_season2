@@ -10,8 +10,10 @@ https://github.com/Gamdongran/norenja-info
   1. flask
   * 사용이유 : 장고 / fastAPI 및 기타 언어는 아직 사용해보지 않아 사용
   2. jwt
-  * 사용이유 : 세션/쿠키 방식보다 안전하다 (참고 : https://tansfil.tistory.com/58)
-  3. pymsql
+  * 사용이유 : 로그인 방삭을 구현하기 위함 세션/쿠키 방식보다 안전하다 (참고 : https://tansfil.tistory.com/58)
+  3. hashlib / datetime
+  * jwt 와 같이 로그인 기능을 구현하기 위해 사용
+  4. pymsql
   * 사용이유 : sql서버를 이용하기 위해 사용
    
   
