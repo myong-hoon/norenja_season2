@@ -2,7 +2,11 @@
 
 피우다 프로젝트에서 미처 완성하지 못한 결과물을 완성하고 리팩토링을 진행하는 개인 프로젝트입니다.
 
-https://github.com/Gamdongran/norenja-info
+피우다 프로젝트 협업 git -> https://github.com/Gamdongran/norenja-info
+
+norenja_season2 aws -> http://13.209.99.226:5000/
+
+
 
 사용언어 : python 
 
