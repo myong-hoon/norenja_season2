@@ -1,5 +1,4 @@
 let login_status
-fnMove('1')
 //사이드바의 left값이 0인지 -값인지 확인후(-값이면 사이드바 hide 0이면 show 상태) 0일때 사이드바 이외의 부분을 클릭하면 sidebar_btn을 누른다.
 $(document).mouseup(function (e) {
     let target = $("#sidebar");
@@ -54,11 +53,26 @@ $(document).ready(function () {
 
 });
 
+
 function fnMove(seq) {
-    var offset = $("#div" + seq).offset();
-    $('html, body').animate({
-        scrollTop: offset.top /*스크롤된 위치에서 상단네비 길이만큼 -60*/
-    }, 500 /*스크롤시간*/);
+
+    if(login_status == true){
+        var offset = $("#div" + seq).offset();
+        $('html, body').animate({
+            scrollTop: offset.top /*스크롤된 위치에서 상단네비 길이만큼 -60*/
+        }, 500 /*스크롤시간*/);
+    }
+    else if(seq == 1){    
+        window.open('/','_self')
+        var offset = $("#div" + seq).offset();
+        $('html, body').animate({
+            scrollTop: offset.top /*스크롤된 위치에서 상단네비 길이만큼 -60*/
+        }, 500 /*스크롤시간*/);
+    }
+    else{
+        alert('로그인이 필요합니다.')
+        window.open('login','_self')
+    }
 }
 
 function sign_out() {

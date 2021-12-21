@@ -57,6 +57,10 @@ def join():
 def location():
     return render_template("location.html")
 
+@app.route("/test")
+def test():
+    return render_template("test.html")
+
 # Login Sever
 @app.route('/sign_in', methods=['POST'])
 def sign_in():
