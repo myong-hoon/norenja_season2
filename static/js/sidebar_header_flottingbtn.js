@@ -32,13 +32,12 @@ $(document).ready(function () {
         $('#sidebar_adminNum').text(res['admin_num'])
         $('#sidebar_address').text(res['address']+' '+res['address_detail'])
         $('#sidebar_sigungu').text(res['address_sigungu'])
+        if($('#sidebar_name').text()==''||$('#sidebar_gender').text()==''||$('#sidebar_adminNum').text()==''||$('#sidebar_address').text()==''||$('#sidebar_sigungu').text()==''){
+            alert('정보업데이트필요')
+        }
     }
     else{
         login_status = false
-    }
-
-    if($('#sidebar_name').text()==''||$('#sidebar_gender').text()==''||$('#sidebar_adminNum').text()==''||$('#sidebar_address').text()==''||$('#sidebar_sigungu').text()==''){
-        alert('정보업데이트필요')
     }
 
     //사이드바 버튼 누르면 동작
