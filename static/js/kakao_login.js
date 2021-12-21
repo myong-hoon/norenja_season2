@@ -10,16 +10,16 @@ function kakaoLogin() {
             Kakao.API.request({
                 url: '/v2/user/me',
                 success: function (response) {
-                    res=response
-                    if(response.id != ''){
-                        if(response.kakao_account != ''){
+                    res = response
+                    if (response.id != '') {
+                        if (response.kakao_account != '') {
                             kakao_log = response.kakao_account.email
                             check(kakao_log);
-                            
-                            // alert('카카오로그인!')
+
+                            alert('카카오로그인!')
                         }
                     }
-                    
+
                 },
                 fail: function (error) {
                     alert('카카오 로그인 실패')
@@ -32,7 +32,7 @@ function kakaoLogin() {
     })
 }
 
-function check(kakao_email){
+function check(kakao_email) {
 
     $.ajax({
         type: "POST",
@@ -41,15 +41,21 @@ function check(kakao_email){
             username_give: kakao_email
         },
         success: function (response) {
-            // alert('kakao 중복체크')
+            alert('kakao 중복체크')
             if (response["exists"] == false) {
-                // alert('kakao계정이 등록되어 있지 않아 등록후 로그인 합니다.')
+                alert('kakao계정이 등록되어 있지 않아 등록후 로그인 합니다.')
                 $.ajax({
                     type: "POST",
                     url: "/sign_up/save",
                     data: {
                         username_give: kakao_email,
-                        password_give: 'kakao'
+                        password_give: 'kakao',
+                        name_give: '',
+                        adminNum_give: '',
+                        gender_give: '',
+                        address_give: '',
+                        detailAddress_give: '',
+                        sigungu_give: ''
                     },
                     success: function (response) {
                         alert("회원가입을 축하드립니다!");
@@ -58,7 +64,7 @@ function check(kakao_email){
                     }
                 });
             } else {
-                // alert('이미 등록되어 로그인을 진행합니다.')
+                alert('이미 등록되어 로그인을 진행합니다.')
                 kakao_sign_in(kakao_email)
                 window.location.replace("/");
             }
@@ -68,19 +74,19 @@ function check(kakao_email){
 
 function kakao_sign_in(kakao_email) {
     $.ajax({
-                    type: "POST",
-                    url: "/sign_in",
-                    data: {
-                        username_give: kakao_email,
-                        password_give: 'kakao'
-                    },
-                    success: function (response) {
-                        if (response['result'] == 'success') {
-                            $.cookie('mytoken', response['token'], { path: '/' });
-                            window.location.replace("/");
-                        } else {
-                            alert(response['msg']);
-                        }
-                    }
-                });
+        type: "POST",
+        url: "/sign_in",
+        data: {
+            username_give: kakao_email,
+            password_give: 'kakao',
+        },
+        success: function (response) {
+            if (response['result'] == 'success') {
+                $.cookie('mytoken', response['token'], { path: '/' });
+                window.location.replace("/");
+            } else {
+                alert(response['msg']);
+            }
+        }
+    });
 }

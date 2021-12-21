@@ -99,13 +99,13 @@
 }
 .slidebox .slidelist .slideitem > a label.prev {
   left:20px;
-  background:rgb(77, 73, 73) url('./img/left.png') center center / 100% no-repeat;
+  background:rgb(77, 73, 73) url('../img/left.png') center center / 100% no-repeat;
   z-index: 99;
 }
 
 .slidebox .slidelist .slideitem > a label.next {
   right:20px;
-  background:#333 url('./img/right.png') center center / 100% no-repeat;
+  background:#333 url('../img/right.png') center center / 100% no-repeat;
   z-index: 99;
 }
 

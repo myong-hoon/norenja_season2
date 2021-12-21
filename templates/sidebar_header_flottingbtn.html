@@ -20,13 +20,6 @@
     </link>
 </head>
 
-<script>
-    function load_contents(address) {
-
-        $("#contents").load(address)
-    }
-</script>
-
 <body>
 
     <!-- 숨겨진 div -->
@@ -53,19 +46,16 @@
             </div>
             <div id="sidebar_login" class="sidebar_login">
                 <div id="sidebar_login_profile">
-                    <ol> 아이디 : </ol>
-                    <ol> 이름 : </ol>
-                    <ol> 성별 : </ol>
-                    <ol> 생년월일 : </ol>
+                    <ol> 아이디 : <label id="sidebar_id"></label></ol>
+                    <ol> 이름 : <label id="sidebar_name"></label></ol>
+                    <ol> 성별 : <label id="sidebar_gender"></label></ol>
+                    <ol> 생년월일 : <label id="sidebar_adminNum"></label></ol>
+                    <ol> 주소 : <label id="sidebar_address"></label></ol>
+                    <ol> 담당구 : <label id="sidebar_sigungu"></label></ol>
                     <button onclick="sign_out()">로그아웃</button>
                 </div>
             </div>
-            <div id="nav-mainbtn" style="display: none;">
-                <button onClick="fnMove('2')" class="btn btn-outline-light">생활복지</button>
-                <button onClick="fnMove('3')" class="btn btn-outline-light">의료복지</button>
-                <button onClick="fnMove('4')" class="btn btn-outline-light">문화/여가</button>
-                <button onclick="window.open('location')" class="btn btn-outline-light">복지지도<a class="fas fa-map-marker-alt"></a></button>
-            </div>
+            
         </nav>
         <!-- 홈 플로팅 버튼 -->
         <div onclick="fnMove('1')" class="home_btn">
@@ -87,7 +77,7 @@
                     <button type="button" onclick="fnMove('2')">생활 복지</button>
                     <button type="button" onclick="fnMove('3')">의료 복지</button>
                     <button type="button" onclick="fnMove('4')">문화/여가</button>
-                    <button type="button" onclick="window.open('location')">복지 지도</button>
+                    <button type="button" onclick="go_location()">복지 지도</button>
                 </div>
                 <div id="search-box">
                     <input type="text" class="form-control search-input" placeholder="검색어를 입력하세요!"

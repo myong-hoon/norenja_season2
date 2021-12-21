@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="stylesheet" href="../static/css/main.css">
-    
     </link>
 </head>
 
@@ -103,7 +102,8 @@
             </div>
             <h5>생활에 도움이 되는 복지 정보를 넣어요</h5>
             <!---생활복지 카드 내용-->
-            <div class="contents">
+            <div style="display:block; height: 300px; text-align: center;" id="life_noLogin"> <a onclick="window.open('login','_self')">로그인이 필요한 페이지 입니다.</a></div>
+            <div class="contents" style="display: none;" id="life_contents">
                 <div class="cards">
                     <div class="card_header">
                         <div class="main_view">복지</div><span id="gu_name">성북구</span>
@@ -179,8 +179,9 @@
                 <h2>의료복지</h2>
             </div>
             <h5>의료 복지 정보 모음입니다.</h5>
-            <!---생활복지 카드 내용-->
-            <div class="contents">
+            <!---의료복지 카드 내용-->
+            <div style="display:block; height: 300px; text-align: center;" id="medical_noLogin"> <a onclick="window.open('login','_self')">로그인이 필요한 페이지 입니다.</a></div>
+            <div class="contents" style="display: none;" id="medical_contents">
                 <div class="cards">
                     <div class="card_header">
                         <div class="main_view">복지</div><span id="gu_name">성북구</span>
@@ -253,7 +254,8 @@
             </div>
             <h5>관공서에서 즐길수 있는 여러 여기활동 안내</h5>
             <!---생활복지 카드 내용-->
-            <div class="contents">
+            <div style="display:block; height: 300px; text-align: center;" id="culture_noLogin"> <a onclick="window.open('login','_self')">로그인이 필요한 페이지 입니다.</a></div>
+            <div class="contents" style="display: none;" id="culture_contents">
                 <div class="cards">
                     <div class="card_header">
                         <div class="main_view">복지</div><span id="gu_name">성북구</span>
@@ -324,9 +326,6 @@
         </section>
     </div>
 
-    <div id="footer">
-        <img src="img/footer_egg2.png">
-    </div>
     <script src="../static/js/main.js"></script>
 </body>
 

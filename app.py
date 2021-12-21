@@ -3,8 +3,9 @@ import pymysql
 import jwt
 import hashlib
 from datetime import datetime, timedelta
+import security
 
-connect = pymysql.connect(host='localhost', port=3306, user='root', password='1234', db='dblogin', charset='utf8') 
+connect = security.connect
 cursor = connect.cursor(pymysql.cursors.DictCursor)
 
 SECRET_KEY = 'SPARTA'
@@ -19,10 +20,10 @@ def home():
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
 
-        sql = "SELECT * FROM users where username = '%s';"
+        sql = "SELECT * FROM users where id = '%s';"
         cursor.execute(sql%(payload["id"]))
         result = cursor.fetchone()
-        print(result)
+        del result['pw']
 
         return render_template('main.html', user_info=result)
 
@@ -64,10 +65,10 @@ def sign_in():
     password_receive = request.form['password_give']
     pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
 
-    sql = "SELECT username, password FROM users"
+    sql = "SELECT id, pw FROM users"
     cursor.execute(sql)
     loginResult = cursor.fetchall()
-    loginResultCount = loginResult.count({'username': username_receive, 'password': pw_hash})
+    loginResultCount = loginResult.count({'id': username_receive, 'pw': pw_hash})
 
     if loginResultCount == 1:
         payload = {
@@ -88,9 +89,15 @@ def sign_up():
     username_receive = request.form['username_give']
     password_receive = request.form['password_give']
     password_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
+    name_receive = request.form['name_give']
+    adminNum_receive = request.form['adminNum_give']
+    gender_receive = request.form['gender_give']
+    address_receive = request.form['address_give']
+    detailAddress_receive = request.form['detailAddress_give']
+    sigungu_receive = request.form['sigungu_give']
 
-    sql = "insert into users(username, password, profile_name, profile_pic_real, profile_pic, profile_info) values(%s, %s, %s, 'profile_pics/profile_placeholder.png','','')"
-    cursor.execute(sql,(username_receive,password_hash,username_receive))
+    sql = "insert into users(id,pw,name,admin_num,gender,address,address_detail,address_sigungu) values(%s,%s,%s,%s,%s,%s,%s,%s)"
+    cursor.execute(sql,(username_receive,password_hash,name_receive,adminNum_receive,gender_receive,address_receive,detailAddress_receive,sigungu_receive))
     connect.commit()
 
     return jsonify({'result': 'success'})
@@ -99,7 +106,7 @@ def sign_up():
 @app.route('/sign_up/check_dup', methods=['POST'])
 def check_dup():
     username_receive = request.form['username_give']
-    sql = "SELECT * FROM users where username = '%s';"
+    sql = "SELECT * FROM users where id = '%s';"
     cursor.execute(sql%(username_receive))
     result = bool(cursor.fetchone())
     return jsonify({'result': 'success', 'exists': result})

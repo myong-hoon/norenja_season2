@@ -81,7 +81,10 @@ $(document).ready(function () {
             msg += `\n비밀번호를 영문+숫자+특수문자 조합하여 구성하세요.`
             $("#input-password").val('')
         }
-        alert(msg)
+        if (msg != '') {
+            alert(msg)
+        }
+
     });
 
 
@@ -122,22 +125,35 @@ function chk(text, bool1, bool2, bool3, bool4, not) {
     return result;
 
 }
-
-let id_nonempty = false
+//중복 체크를 다른 함수에서 진행하여 전역함수로 설정
 let idChk_nonempty = false
-let pw_nonempty = false
-let pwChk_nonempty = false
-let name_nonempty = false
-let admin_num_nonempty = false
-let gender_nonempty = false
-let address_nonempty = false
-let detailAddress_nonempty = false
-
-
 function idChk() {
-    alert('중복확인')
-    idChk_nonempty = true
+    let username = $("#input-username").val()
+    if (username == "") {
+        alert('아이디를 입력해주세요.')
+        return;
+    }
+    $.ajax({
+        type: "POST",
+        url: "/sign_up/check_dup",
+        data: {
+            username_give: username
+        },
+        success: function (response) {
+
+            if (response["exists"]) {
+                alert('이미 존재하는 아이디입니다.')
+            } else {
+                alert('사용할 수 있는 아이디입니다.')
+                idChk_nonempty = true
+            }
+
+
+        }
+    });
+
 }
+
 
 function join_btn() {
     let username = $("#input-username").val();
@@ -146,46 +162,57 @@ function join_btn() {
     let name = $("#input-name").val();
     let admin_num = $('#admin_num_first').val();
     let gender = $('#admin_num_end').val();
-    let address = $("#jibunAddress").val();
+    let address = $("#jibunAddress").text();
     let detailAddress = $("#detailAddress").val();
+    let sigungu = $("#sigungu").val();
 
-    if (username == '') {
+    let id_nonempty = false
+    let pw_nonempty = false
+    let pwChk_nonempty = false
+    let name_nonempty = false
+    let admin_num_nonempty = false
+    let gender_nonempty = false
+    let address_nonempty = false
+    let detailAddress_nonempty = false
+
+    if (username != '') {
         id_nonempty = true
     }
-    if (password == '') {
+    if (password != '') {
         pw_nonempty = true
     }
-    if (password2 == '') {
+    if (password2 != '') {
         pwChk_nonempty = true
     }
-    if (name == '') {
+    if (name != '') {
         name_nonempty = true
     }
-    if (admin_num == '') {
+    if (admin_num != '') {
         admin_num_nonempty = true
     }
-    if (gender == '') {
+    if (gender != '') {
         gender_nonempty = true
     }
-    if (address == '') {
+    if (address != '') {
         address_nonempty = true
     }
-    if (detailAddress == '') {
+    if (detailAddress != '') {
         detailAddress_nonempty = true
     }
 
-    if (id_nonempty && idChk_nonempty && pw_nonempty && pwChk_nonempty && name_nonempty && admin_num_nonempt && gender_nonempty && address_nonempty && detailAddress_nonempty == true) {
+    if (id_nonempty && idChk_nonempty && pw_nonempty && pwChk_nonempty && name_nonempty && admin_num_nonempty && gender_nonempty && address_nonempty && detailAddress_nonempty == true) {
         $.ajax({
             type: "POST",
             url: "/sign_up/save",
             data: {
                 username_give: username,
                 password_give: password,
-                name_give:name,
-                adminNum_give:admin_num,
-                gender_give:gender,
-                address_give:address,
-                detailAddress_give:detailAddress
+                name_give: name,
+                adminNum_give: admin_num,
+                gender_give: gender,
+                address_give: address,
+                detailAddress_give: detailAddress,
+                sigungu_give: sigungu
             },
             success: function (response) {
                 alert("회원가입을 축하드립니다!");
@@ -193,6 +220,8 @@ function join_btn() {
             }
         });
     } else {
+        console.log(username, password, password2, name, admin_num, gender, address, detailAddress)
+        console.log(id_nonempty, idChk_nonempty, pw_nonempty, pwChk_nonempty, name_nonempty, admin_num_nonempty, gender_nonempty, address_nonempty, detailAddress_nonempty)
         alert('작성하지 않은 부분을 작성해 주세요.')
     }
 }
